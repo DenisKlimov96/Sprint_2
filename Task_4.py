@@ -10,16 +10,17 @@ class EmployeeSalary:
     @classmethod
     def get_hours(cls, rest_days):
         hours = (7 - rest_days) * 8
-        return hours
+        return cls(hours)
 
     @classmethod
     def get_email(cls, name):
         email = f"{name}@email.com"
-        return email
+        return cls(email)
 
     @classmethod
     def set_hourly_payment(cls, new_hourly_payment):
         cls.hourly_payment = new_hourly_payment
 
-    def salary(self):
-        return self.get_hours() * self.hourly_payment
+    @classmethod
+    def salary(cls):
+        return cls(get_hours) * hourly_payment
